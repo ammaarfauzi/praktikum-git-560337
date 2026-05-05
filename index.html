@@ -14,6 +14,7 @@
                 justify-content: center;
                 align-items: center;
                 color: #333;
+                padding-top: 70px;
             }
             .container {
                 background-color: #fff;
@@ -27,15 +28,45 @@
              p {
                 color: #666;
             }
+            .navbar {
+            display: flex;
+           justify-content: center; /* Menaruh konten di tengah secara horizontal */
+            align-items: center;
+            padding: 15px 50px;
+            background-color: rgba(0, 0, 0, 0.7); /* Transparan gelap */
+            color: white;
+            position: fixed; /* Kunci di atas */
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Memastikan navbar di atas elemen lain */
+            }
+
+            .nav-links {
+            display: flex;
+            list-style: none;
+            }
+
+            .nav-links li {
+            margin-left: 25px;
+            }
+
+            .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            }
             
         </style>
     </head>
     <body>
-        <nav>
-            <a href="#home">Home</a>
-             <a href="#about">About</a>
-             <a href="#contact">Contact</a>
-        </nav>
+        <nav class="navbar">
+  <div class="logo">Proyek Git</div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
         <div class="container">
             <h1>Tugas praktikum Git</h1>
             <p>Halo, Ini commit ketiga</p>
