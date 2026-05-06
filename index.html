@@ -5,24 +5,47 @@
         <title>Tugas Praktikum Git</title>
 
         <style>
+            :root {
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --card-bg: #ffffff;
+    --text-primary: #333333;
+    --navbar-bg: rgb(27, 45, 82); /* Warna solid sesuai permintaanmu tadi */
+    --nav-text: #ffffff;
+}
+
+/* Tema Dark Mode */
+[data-theme="dark"] {
+    --bg-gradient: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    --card-bg: #1f1f1f;
+    --text-primary: #f8f9fa;
+    --navbar-bg: #000000;
+    --nav-text: #cccccc;
+}
             body {
                 font-family: Arial, sans-serif;
-                background: linear-gradient(135deg, #667eea 0%, #3f2857 100%);
-                margin: 0;
-                min-height: 100vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: #333;
-                padding-top: 70px;
-                flex-direction: column;
+    /* Ubah background menjadi variabel */
+    background: var(--bg-gradient); 
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Ubah warna teks menjadi variabel */
+    color: var(--text-primary); 
+    padding-top: 70px;
+    flex-direction: column;
+    /* Tambahkan efek transisi */
+    transition: all 0.3s ease;
             }
             .container {
-                background-color: #fff;
-                padding: 20px;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            }
+              background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Tambahkan efek transisi */
+    transition: background-color 0.3s ease;
+}
+            
              h1 {
                 color: #333;
             }
@@ -31,15 +54,23 @@
             }
             .navbar {
             display: flex;
-           justify-content: center; /* Menaruh konten di tengah secara horizontal */
-            align-items: center;
-            padding: 15px 50px;
-            background-color: rgb(27, 45, 82); /* Transparan gelap */
-            color: white;
-            position: fixed; /* Kunci di atas */
-            top: 0;
-            width: 100%;
-            z-index: 1000; /* Memastikan navbar di atas elemen lain */
+    justify-content: center; /* Menaruh konten di tengah */
+    align-items: center;
+    padding: 15px 50px;
+    
+    /* 1. Ubah warna background menggunakan variabel */
+    background-color: var(--navbar-bg); 
+    
+    /* 2. Ubah warna teks menggunakan variabel */
+    color: var(--nav-text); 
+    
+    position: fixed; /* Kunci di atas */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Memastikan navbar di atas elemen lain */
+    
+    /* 3. Tambahkan efek transisi */
+    transition: background-color 0.3s ease, color 0.3s ease;/* Memastikan navbar di atas elemen lain */
             }
 
             .nav-links {
@@ -90,6 +121,21 @@
             .footer-links a:hover {
                 color: white; /* Berubah terang saat disentuh kursor */
             }
+            .btn-theme {
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--text-primary); /* Warna tombol berlawanan dengan background */
+    color: var(--card-bg); /* Teks tombol berlawanan dengan background */
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-theme:hover {
+    opacity: 0.8;
+    transform: scale(1.05); /* Efek tombol membesar sedikit saat disentuh kursor */
+}
             
         </style>
     </head>
@@ -100,6 +146,12 @@
     <li><a href="#">Home</a></li>
     <li><a href="#">About</a></li>
     <li><a href="#">Contact</a></li>
+
+    <li>
+            <button id="theme-toggle" style="cursor: pointer; padding: 5px 10px; border-radius: 5px; border: none; background-color: #eee; color: #333;">
+                🌙 Dark Mode
+            </button>
+        </li>
   </ul>
 </nav>
         <div class="container">
@@ -120,5 +172,6 @@
         </ul>
     </div>
     </footer>
+    <script src="script.js"></script>
     </body>
 </html>
