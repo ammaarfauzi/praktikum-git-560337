@@ -15,6 +15,7 @@
                 align-items: center;
                 color: #333;
                 padding-top: 70px;
+                flex-direction: column;
             }
             .container {
                 background-color: #fff;
@@ -33,7 +34,7 @@
            justify-content: center; /* Menaruh konten di tengah secara horizontal */
             align-items: center;
             padding: 15px 50px;
-            background-color: rgba(0, 0, 0, 0.7); /* Transparan gelap */
+            background-color: rgb(27, 45, 82); /* Transparan gelap */
             color: white;
             position: fixed; /* Kunci di atas */
             top: 0;
@@ -56,6 +57,40 @@
             font-weight: 500;
             }
             
+            .main-footer {
+    background-color: rgba(0, 0, 0, 0.3); /* Hitam transparan */
+    backdrop-filter: blur(10px); /* Efek blur kaca */
+    color: white;
+    padding: 20px 0;
+    margin-top: auto; /* Memberi jarak dari kartu tugas */
+    width: 100%;
+            }
+
+            .footer-content {
+                display: flex;
+                flex-direction: column; /* Menyusun teks dan link secara vertikal */
+                align-items: center;
+                gap: 10px;
+            }
+
+            .footer-links {
+                display: flex;
+                list-style: none;
+                gap: 20px;
+                padding: 0;
+            }
+
+            .footer-links a {
+                color: #ccc;
+                text-decoration: none;
+                font-size: 0.9rem;
+                transition: color 0.3s;
+            }
+
+            .footer-links a:hover {
+                color: white; /* Berubah terang saat disentuh kursor */
+            }
+            
         </style>
     </head>
     <body>
@@ -75,8 +110,15 @@
             <p>Kelas: Termodinamika 2026</p>
         </div>
         <hr>
-            <footer>
-                <p>&copy; 2026 Ammaar Fauzi Ramadhani | Kontak: ammaar.fauzi.ramadhani@example.com</p>
-            </footer>
+            <footer class="main-footer">
+    <div class="footer-content">
+        <p>&copy; 2026 Ammaar Fauzi Ramadhani. All rights reserved.</p>
+        <ul class="footer-links">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Instagram</a></li>
+        </ul>
+    </div>
+    </footer>
     </body>
 </html>
